@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>An Unmaintained Account</title>
+    </head>
+
+
+    <body>
+        <div id="bodi">
+        <p id="message">
+            This is the static version of this site. You have tried to access a social media account of mine that I no longer maintain. Please click below to see the list of unmaintained accounts:
+        </p>
+        <p>
+            <a id="continue" href="fallback/unmaintained-socials/">Check for the list</a>
+        </p>
+        </div>
+
+        <script type="module">
+            (() => {
+                const params = new URLSearchParams(location.search);
+                const target = params.get("target");
+
+                if (!target) return;
+
+                const map = {
+                    insta: {
+                        name: "Instagram",
+                        path: "instagram"
+                    }
+
+                };
+
+                const entry = map[target.toLowerCase()];
+                if (!entry) return;
+
+                const container = document.getElementById("bodi");
+                if (!container) return;
+
+                container.innerHTML = `
+                <p>
+                    Be aware that I no longer maintain my ${entry.name} account. 
+                </p>
+                
+                <p> 
+                    <a href="https://udnzk.net/${entry.path}">
+                        Continue anyway
+                    </a>
+                
+                </p>
+                `
+            }) ();
+        </script>
+
+<div id="footer">
+<footer>
+  <a href="/footer.html">The Footer</a>
+</footer>
+</div>
+
+<script>
+fetch('/footer.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('footer').innerHTML = html;
+  });
+</script>
+
+
+    </body>
+</html>

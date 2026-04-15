@@ -1,0 +1,15 @@
+Copy paste:
+
+<div id="footer">
+<footer>
+  <a href="/footer.html">The Footer</a>
+</footer>
+</div>
+
+<script>
+fetch('/footer.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('footer').innerHTML = html;
+  });
+</script>

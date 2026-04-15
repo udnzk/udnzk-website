@@ -20,16 +20,19 @@
     (e.g. <a href="https://developers.cloudflare.com/fundamentals/reference/policies-compliances/cloudflare-cookies/#additional-cookies-used-by-the-challenge-platform">cf_clearance</a>). This processing is strictly necessary for the operation and security of the website and does not involve analytics, profiling, or advertising.
   </p>
 
+<div id="footer">
 <footer>
-
-  <nav>
-  <a href="/">Home</a>
-  <a href="/privacy.html">Privacy</a>
-  <a href="/instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-  <a href="https://github.com/udnzk/fluffy-chainsaw" target="_blank" rel="noopener noreferrer">Source</a>
-  </nav>
-
+  <a href="/footer.html">The Footer</a>
 </footer>
+</div>
+
+<script>
+fetch('/footer.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('footer').innerHTML = html;
+  });
+</script>
  
 </body>
 </html>

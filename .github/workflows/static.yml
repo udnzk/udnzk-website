@@ -23,7 +23,7 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - run: nix develop -c eleventy
-      - uses: actions/upload-age-artifact@v3
+      - uses: actions/upload-page-artifact@v3
         with:
           path: _site
   deploy:
@@ -34,4 +34,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-      - uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4

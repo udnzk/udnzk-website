@@ -1,0 +1,20 @@
+---
+title: Posts
+eleventyExcludeFromCollections: true
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+	{% include "components/head.html" %}
+	<body>
+		<h1> Posts </h1>
+		<ul>
+			{% for post in collections.posts | reverse %}
+			<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+			{% endfor %}
+		</ul>
+
+
+	{% include "components/footer.html" %}
+	</body>
+</html>
